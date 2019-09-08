@@ -1,0 +1,360 @@
+div,span,p,table,tr,td,ul,li,header{
+			margin: 0;
+			padding: 0;
+}	
+        .view{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			width: 100%;
+			height: 100%;
+		}
+		header{
+			width: 100%;
+			height:0.8rem;
+			background-color: white;
+			position: fixed!important;
+			z-index: 1000;
+			top: 0!important;
+			left: 0;
+			right:0;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		.sticky {
+		    position: sticky;
+		    position: -webkit-sticky;
+		    top: 0;
+		}
+		/* .content{
+			overflow-y: scroll;
+		} */
+        .container1{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 10.5rem;
+			background-color: white;
+			border-radius: 0.2rem;
+        }
+		.container2{
+			width: 100%;
+			height: 36.3rem;
+			background-color: white;
+			position: relative;
+			top: 10.8rem;
+			display: flex;
+			flex-direction: column;
+			/* justify-content: center; */
+			align-items: center;
+		}
+		.container3{
+			width: 100%;
+			height: 8.8rem;
+			background-color: white;
+			position: relative;
+			top: 11.1rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		/* 导航栏 */
+        header{
+            position: relative;
+            left: 0;
+            top: 0.23rem;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+		/* 导航栏标题 */
+		.title{
+			font-size: 0.34rem;
+			position: absolute;
+			left: 50%;
+			margin-left: -0.68rem;
+		}
+		/* 页面顶图 */
+        .content-top{
+            position: absolute;
+            top: 0.88rem;
+            left: 0%;
+            width: 7.5rem;
+            height: 2.65rem;
+            /*margin-left: -2.5rem;*/
+            /*margin-top: -3rem;*/
+        }
+        /*.ending_con .ending_img{
+            margin: 0 auto;
+        }*/
+		
+		/* 顶部图片宽度 */
+        .content-top .content_img img{
+            width: 100%;
+        }
+       /* .content1 .ending_txt{
+            text-align: center;
+            line-height: 0.6rem;
+            font-size: 0.32rem;
+            color:#333;
+            /*margin-top: 0.5rem;*/
+       /*     letter-spacing: 2px;
+        } */ 
+		
+		/* 权益球模块 */
+		.content-ball{
+			position: absolute;
+			top: 4.3rem;
+			width: 100%;
+			height: 3.5rem;
+			display: flex;
+			justify-content: center;
+			
+		}
+		/* 两行权益球 */
+		.ballListItem{
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 0.36rem;
+		}
+		/* 8个权益球样式 */
+		.ball{
+			width: 1.8rem;
+			height: 1.56rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* margin-right: 0.1rem; */
+		}
+		/* 权益球图片样式 */
+		.ballList img{
+			width: 0.72rem;
+			height: 0.72rem;
+		}
+		/* 开会员按钮组 */
+		.btn-vip{
+			position: absolute;
+			top: 8.5rem;
+			width: 100%;
+			height: 2rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.buyVip,.doVip{
+			width: 5.92rem;
+			height: 0.64rem;
+			margin-bottom: 0.2rem;
+			border-radius: 0.32rem;
+		}
+		.buyVip{
+			background:linear-gradient(270deg, #FFD700 0%, #FFC500 100%); ;
+		}
+		.doVip{
+			background: linear-gradient(270deg, #ECE0CD 0%, #D4BE9E 100%);
+		}
+		.fs-28{
+			font-size: 0.28rem;
+			font-weight: 18.75rem;
+		}
+		.fs-21{
+			font-size: 0.20rem;
+		}
+		.fs-22{
+			font-size: 0.22rem;
+		}
+		.fs-24{
+			font-size: 0.24rem;
+		}
+		.fs-32{
+			font-size: 0.32rem;
+		}
+		.fs-36{
+			font-size: 0.36rem;
+		}
+		.fc-b{
+			color: #2F2F2F;
+		}
+		.fc-g{
+			color: #707070;
+		}
+		.fc-r{
+			color: #F93A2F;
+		}
+		.fw{
+			font-weight: bold;
+		}
+		.mg-t-10{
+			margin-top: 0.1rem;
+		}
+		.mg-t-25{
+			margin-top: 0.25rem;
+		}
+		.mg-t-30{
+			margin-top: 0.3rem;
+		}
+		.mg-t-40{
+			margin-top: 0.4rem;
+		}
+		.mg-t-50{
+			margin-top: 0.5rem;
+		}
+		.mg-t-60{
+			margin-top: 0.6rem;
+		}
+		.mg-t-70{
+			margin-top: 0.7rem;
+		}
+		.mg-l-30{
+			margin-left: 0.3rem;
+		}
+		.flex-column-c{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.flex-row-c{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		/* 列表容器的标题 */
+        .listTitle img{
+        		width: 0.72rem;
+        		height: 0.04rem;
+        }
+		/* 礼品列表的标题 */
+		.listTitle{
+			position: relative;
+			margin-top: 0.5rem;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		/* 副标题 */
+		.subtitle{
+			position: absolute;
+			margin-top: 1rem;
+		}
+		.subtitle p{
+			color: #AD9470;
+			text-align: center;
+		}
+		
+		/* 礼品列表 */
+		.list{
+			margin-top: 0.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.list-card{
+			width: 6.9rem;
+			/* position: absolute; */
+			margin-top: 0.3rem;
+			box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
+			border-radius: 16px;
+			display: flex;
+			flex-direction: row;
+/* 			align-items: center;*/			
+			justify-content: flex-start;
+		}
+		.list-card img{
+			border-top-left-radius: 0.32rem;
+			border-bottom-left-radius: 0.32rem;
+		}
+		.list-gift{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+		.list-cost{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+		}
+		.list-cost p{
+			margin-right: 0.3rem;
+		}
+		.btn-buy{
+			width: 3.5rem;
+			height: 0.58rem;
+			background: linear-gradient(270deg, #ECE0CD 0%, #D4BE9E 100%);
+			border-radius: 29px;
+		}
+		.giftName{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp:1;
+			-webkit-box-orient: vertical;
+		}
+		.endTitle{
+			position: absolute;
+			margin-top: 0.5rem;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		.endTitle img{
+				width: 0.72rem;
+				height: 0.04rem;
+		}
+		.end-subtitle{
+			position: absolute;
+			margin-top: 1rem;
+		}
+		.end-subtitle p{
+			color: #AD9470;
+			text-align: center;
+		}
+		
+		/* 图片组样式
+		.imgList{
+			width: 100%;
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			top: 2rem;
+		}
+		
+		.imgListItem1{
+			position: absolute;
+			left:50%;
+			margin-left: -2.5rem;
+			top: 1.3rem;
+		}
+		.imgListItem2{
+			position: absolute;
+			left: 50%;
+			margin-left: -0.6rem;
+		}
+		.imgListItem3{
+			position: absolute;
+			top:1.3rem;
+			right: 50%;
+			margin-right: -2.5rem;
+		}
+		.imgListItem4{
+			position: absolute;
+			left:50%;
+			margin-left: -2.7rem;
+			top: 4rem;
+		}
+		.imgListItem5{
+			position: absolute;
+			left: 50%;
+			margin-left: -0.97rem;
+			top: 4rem;
+		}
+		.imgListItem6{
+			position: absolute;
+			top:3.6rem;
+			right: 50%;
+			margin-right: -2.8rem;
+		} */

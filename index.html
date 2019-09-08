@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="no">
+       <!-- <meta name='full-screen' content='no' /> -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="blank">
+        <script src="js/mui.min.js"></script>
+		<script src="js/index.js"></script>
+        <link href="css/mui.min.css" rel="stylesheet"/>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <title>rem字体大小自适应</title>
+        <!-- <link rel="stylesheet" href="css/reset.css" type="text/css"> --><!--此处是我全局css代码，清除默认样式，无影响-->
+        <style>
+        </style>
+        <script>
+            
+        (function(win, designW) {
+            var doc = win.document;
+            var docEle = doc.documentElement;
+            designW = designW || 640; //设计稿宽度px,默认640px设计稿
+            var ratio = designW / 100;//640px=> 1rem = 100px, 超出640px font-size：100px;
+            var or = "orientationchange" in win ? "orientationchange" : "resize";
+            //创建viewport
+            _createViewport();
+            if(doc.addEventListener){
+                win.addEventListener(or, _refreshRem, false);
+                doc.addEventListener("DOMContentLoaded", _refreshRem, false);
+            }
+            /**
+             * 创建viewport
+             */
+            function _createViewport(){
+                var metaEl = doc.createElement('meta');
+                metaEl.setAttribute('name', 'viewport');
+                metaEl.setAttribute('content', 'initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no');
+                if (docEle.firstElementChild) {
+                    docEle.firstElementChild.appendChild(metaEl);
+                }
+
+            }
+            /**
+             * 动态更新rem
+             */
+            function _refreshRem() {
+                var clientW = docEle.clientWidth || 320;
+                //设置最大和最小宽度取值
+                if(clientW > designW){
+                    clientW = designW
+                } else if(clientW<320){
+                    clientW=320;
+                }
+                docEle.style.fontSize = clientW / ratio + "px";
+            };
+        })(window, 750);//750为设计稿宽度px值,根据实际设计稿大小对应设置
+            
+			/**监听scroll**/
+			// if (isIos) {
+			//       $("header").addClass("sticky");
+			// } else {
+			//       var topHeight = $(".top").height();
+			//       var navHeight = $tabs.height();
+			//       $(window).on("scroll", function () {
+			//         var _this = $(this),
+			//             scrollTop = _this.scrollTop();
+			//         if (topHeight < scrollTop+5) {
+			//           $tabs.addClass("fixed");
+			//         } else {
+			//           $tabs.removeClass("fixed");
+			//         }
+			//       });
+			//     }
+        </script>
+    </head>
+    <body>
+		<div class="view">
+			<header>
+				<span class="mui-icon mui-icon-back mg-l-30"></span>    
+			    <span class="title">开通会员</span>
+			</header>
+			<div class="content">
+				<div class="container1" q-ctrl="endingCtrl">
+				    <div class="content-top">
+				        <p class="content_img">
+				            <img src="images/topimg.png"/>
+				        </p>
+				    </div>
+					<div class="content-ball">
+						<table class="ballList">
+							<tr class="ballListItem">
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-28 fc-b">专享底价</p>
+									<p class="fs-21 fc-g">购物最高省50%</p>
+								</td>
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-28 fc-b">个性开店</p>
+									<p class="fs-21 fc-g">分享赚收益</p>
+								</td>
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-28 fc-b">邀请赚钱</p>
+									<p class="fs-21 fc-g">邀会员奖¥100</p>
+								</td>
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-28 fc-b">专属客服</p>
+									<p class="fs-21 fc-g">会员特优通道</p>
+								</td>		
+							</tr>
+							<tr class="ballListItem">
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-24 fc-b">麦店学院</p>
+									<p class="fs-21 fc-g">免费课程包全年</p>
+								</td>
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-24 fc-b">自购返利</p>
+									<p class="fs-21 fc-g">每件最高返5%</p>
+								</td>
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-24 fc-b">会员活动</p>
+									<p class="fs-21 fc-g">折扣特价享不停</p>
+								</td>
+								<td class="ball">
+									<img src="images/person_header@2x.png" />
+									<p class="fs-24 fc-b">双倍麦穗</p>
+									<p class="fs-21 fc-g">积分换豪礼</p>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="btn-vip">
+						<div>
+							<button class="buyVip fs-28">购礼包·送会员</button>
+						</div>
+						<div>
+							<button class="doVip fs-28">做任务·得会员</button>
+						</div>
+					</div>
+				</div>
+				<div class="container2">
+					<div class="listTitle">
+						<img src="images/left_Rectangle@3x.png" />
+						<p class="fs-36"> 购礼包·尊享会员免费送 </p>
+						<img src="images/right_Rectangle@3x.png" />
+					</div>
+					<div class="subtitle">
+						<p class="fs-24">选购以下任意一款赠品礼包即可续费年费会员</p>
+					</div>	
+					<ul class="list">
+						<!-- <img src="" class="listImg" style="width: 2.8rem;height: 2.8rem;border:0;"/>
+						<div class="describe">
+							<div class="list-gift">
+								<p class="giftName fs-32 fw mg-t-25 mg-l-30 fc-b">这是标题</p>
+								<div class="list-cost mg-t-10 mg-l-30">
+									<p class="wheatPrice fs-22 fc-r">礼包价</p>
+									<p class="marketPrice fs-22" style="text-decoration: line-through;">市场价</p>
+								</div>
+							</div>
+							<button class="btn-buy mg-l-30 mg-t-70">购此礼包，赠送会员</button>
+						</div> -->
+					</ul>
+				</div>
+				<div class="container3">
+					<div class="endTitle">
+						<img src="images/left_Rectangle@3x.png" />
+						<p class="fs-36">六大人群都在麦店开店</p>
+						<img src="images/right_Rectangle@3x.png" />
+					</div>
+					<div class="end-subtitle">
+						<p class="fs-24">导师指导，平台发货，做只需数钱的甩手掌柜</p>
+					</div>	
+					<!-- 图片组 -->
+					<img src="images/group-pic.png" style="position:absolute;width:6.2rem;height: 6.2rem;margin-top:1.9rem;"/>
+					<!-- 第一排三个图片 -->
+					<!-- <div class="imgList">
+						<div class="imgListItem1 flex-column-c">
+							<img src="images/pic_touxiang@3x.png" style="width: 1.38rem;height: 1.38rem;"/>
+							<p class="fs-32 fc-b">网络红人</p>
+							<p class="fs-24 fc-g">影响力大</p>
+						</div>
+						<div class="imgListItem2 flex-column-c">
+							<img src="images/pic_touxiang@3x.png" style="width: 1.26rem;height: 1.26rem;"/>
+							<p class="fs-32 fc-b">上班族</p>
+							<p class="fs-24 fc-g">人脉广</p>
+						</div>
+						<div class="imgListItem3 flex-column-c">
+							<img src="images/pic_touxiang@3x.png" style="width: 1rem;height: 1rem;"/>
+							<p class="fs-32 fc-b">白领</p>
+							<p class="fs-24 fc-g">寻找副业</p>
+						</div>
+					</div>
+					<div class="imgList">
+						<div class="imgListItem4 flex-column-c">
+							<img src="images/pic_touxiang@3x.png" style="width: 0.81rem;height: 0.81rem;"/>
+							<p class="fs-32 fc-b">退休父母</p>
+							<p class="fs-24 fc-g">时间多交友圈广</p>
+						</div>
+						<div class="imgListItem5 flex-column-c">
+							<img src="images/pic_touxiang@3x.png" style="width: 1.85rem;height: 1.85rem;"/>
+							<p class="fs-32 fc-b">大学生</p>
+							<p class="fs-24 fc-g">自购省钱，商业实践</p>
+						</div>
+						<div class="imgListItem6 flex-column-c">
+							<img src="images/pic_touxiang@3x.png" style="width: 1rem;height: 1rem;"/>
+							<p class="fs-32 fc-b">创业者</p>
+							<p class="fs-24 fc-g">0风险快速启动</p>
+						</div>
+					</div>
+					<!-- 第二排三个图片 --> 
+				</div>
+			</div>
+			
+		</div>
+		
+	</body>	
+	<script>
+		var gift=[];
+		$(document).ready(function(){
+			$.ajax({
+				url:"https://www.easy-mock.com/mock/5d6cce2eceaf4c1721ea92f5/myshop/gift/list",
+				type:"get",
+				success:function(res){
+					if(res.data){
+						gift=res.data.list;
+						var html='';
+						$.each(gift,function(i,item){
+							html+='<li class="list-card">'
+							+'<img src='+item.thumbnailList[1]+' class="listImg" style="width: 2.8rem;height: 2.8rem;border:0;"/>'
+							+ '<div class="describe">'
+								+ '<div class="list-gift">'
+									+ '<p class="giftName fs-32 fw mg-t-25 mg-l-30 fc-b">'+item.name+'</p>'
+									+ '<div class="list-cost mg-t-10 mg-l-30">'
+										+ '<p class="wheatPrice fs-22 fc-r">礼包价:￥'+item.wheatPrice+'</p>'
+										+ '<p class="marketPrice fs-22" style="text-decoration: line-through;">市场价:￥'+item.marketPrice+'</p>'
+									+ '</div>'
+								+ '</div>'
+								+ '<button class="btn-buy mg-l-30 mg-t-70">购此礼包，赠送会员</button>'
+							+ '</div></li>'
+						});
+						$(".list").append(html);
+							// $.each(item,function(j,thumbnailList){
+							// 	$(".listImg").attr("src",function(){
+							// 		return thumbnailList[1];
+							// 	})
+							// });
+							// $(".giftName").text(function(){
+							// 	return item.name;
+							// });
+							// $.each(item,function(j,name){
+							// 	$(".giftName").text(function(){
+							// 	return name;
+							// })
+							// });
+							// $.each(item,function(j,wheatPrice){
+							// 	$(".wheatPrice").text(function(){
+							// 	return wheatPrice;
+							// 	})
+							// });
+							// $.each(item,function(j,marketPrice){
+							// 	$(".marketPrice").text(function(){
+							// 	return marketPrice;
+							// 	})
+							// });
+						
+						// for(var index = 0;index<gift.length;index++){
+						// 	$(".listImg").attr("src",function(){
+						// 		return gift[index].thumbnailList[1];
+						// 	})
+						// 	$(".giftName").text(function(){
+						// 		return gift[index].name;
+						// 	});
+						// 	$(".wheatPrice").text(function(){
+						// 		return "礼包价:￥" + gift[index].wheatPrice;
+						// 	});
+						// 	$(".marketPrice").text(function(){
+						// 		return "市场价:￥"+ gift[index].marketPrice;
+						// 	});
+						//}						
+					}
+				}
+			})
+		})
+	</script>
+</html>
